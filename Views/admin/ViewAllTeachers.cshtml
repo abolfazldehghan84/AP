@@ -1,0 +1,10 @@
+﻿
+@* ViewAllTeachers.cshtml *@
+<h2>All Teachers</h2>
+<table class="table">
+    <tr><th>Name</th><th>Email</th></tr>
+    @foreach (var teacher in Model)
+    {
+        <tr><td>@teacher.FirstName @teacher.LastName</td><td>@teacher.Email</td></tr>
+    }
+</table>

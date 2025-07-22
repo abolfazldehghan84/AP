@@ -1,0 +1,9 @@
+﻿@* ViewAllClasses.cshtml *@
+<h2>All Classes</h2>
+<table class="table">
+    <tr><th>Course</th><th>Term</th><th>Year</th><th>Room</th></tr>
+    @foreach (var c in Model)
+    {
+        <tr><td>@c.Course.Title</td><td>@c.Term</td><td>@c.Year</td><td>@c.RoomNumber</td></tr>
+    }
+</table>

@@ -1,0 +1,23 @@
+﻿@* UnassignStudentFromClass.cshtml *@
+<h2>Unassign Student from Class</h2>
+<form asp-action="UnassignStudentFromClass" method="post">
+    <div class="form-group">
+        <label>Class</label>
+        <select name="classId" class="form-control">
+            @foreach (var c in ViewBag.Classes)
+            {
+                <option value="@c.ClassId">@c.Course.Title (@c.Term @c.Year)</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Student</label>
+        <select name="studentId" class="form-control">
+            @foreach (var s in ViewBag.Students)
+            {
+                <option value="@s.StudentId">@s.FirstName @s.LastName</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-danger">Unassign</button>
+</form>

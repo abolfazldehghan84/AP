@@ -1,0 +1,19 @@
+﻿@* AppealStatus.cshtml *@
+@model List<Project.Models.GradeAppeal>
+<h2>Appeal Status</h2>
+<table class="table">
+    <thead>
+        <tr><th>Course</th><th>Status</th><th>Response</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var appeal in Model)
+        {
+            <tr>
+                <td>@appeal.Class.Course.Title</td>
+                <td>@appeal.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />

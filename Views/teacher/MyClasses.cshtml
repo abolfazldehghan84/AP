@@ -1,0 +1,29 @@
+﻿@* MyClasses.cshtml *@
+@model List<ClassAssignment>
+<h2>My Classes</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Course</th>
+            <th>Term</th>
+            <th>Year</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ca in Model)
+        {
+            <tr>
+                <td>@ca.Class.Course.Title</td>
+                <td>@ca.Class.Term</td>
+                <td>@ca.Class.Year</td>
+                <td>
+                    <a asp-action="ViewClassStudents" asp-route-classId="@ca.ClassId" class="btn btn-info">View Students</a>
+                    <a asp-action="AssignGrade" asp-route-classId="@ca.ClassId" class="btn btn-secondary">Assign Grades</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />

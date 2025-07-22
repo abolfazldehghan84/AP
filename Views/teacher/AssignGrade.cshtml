@@ -1,0 +1,31 @@
+﻿@* AssignGrade.cshtml *@
+@model List<ClassStudent>
+<h2>Assign Grades</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>Current Grade</th>
+            <th>New Grade</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cs in Model)
+        {
+            <tr>
+                <td>@cs.Student.FirstName @cs.Student.LastName</td>
+                <td>@(cs.Grade.HasValue ? cs.Grade.Value.ToString("0.00") : "-")</td>
+                <td>
+                    <form asp-action="AssignGrade" method="post" class="form-inline">
+                        <input type="hidden" name="studentId" value="@cs.StudentId" />
+                        <input type="hidden" name="classId" value="@cs.ClassId" />
+                        <input type="number" name="grade" step="0.01" class="form-control" required />
+                        <button type="submit" class="btn btn-success btn-sm ml-2">Submit</button>
+                    </form>
+                </td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>

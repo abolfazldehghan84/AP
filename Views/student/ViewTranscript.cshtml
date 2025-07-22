@@ -1,0 +1,20 @@
+﻿@* ViewTranscript.cshtml *@
+@model List<ClassStudent>
+<h2>Transcript</h2>
+<p><strong>GPA:</strong> @ViewBag.GPA</p>
+<table class="table">
+    <thead>
+        <tr><th>Course</th><th>Grade</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var cs in Model)
+        {
+            <tr>
+                <td>@cs.Class.Course.Title</td>
+                <td>@(cs.Grade.HasValue ? cs.Grade.Value.ToString("0.00") : "Not Graded")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />

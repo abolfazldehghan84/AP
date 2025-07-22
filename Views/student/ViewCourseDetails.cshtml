@@ -1,0 +1,10 @@
+﻿@* ViewCourseDetails.cshtml *@
+@model Class
+<h2>Course Details</h2>
+<p><strong>Course:</strong> @Model.Course.Title</p>
+<p><strong>Term:</strong> @Model.Term @Model.Year</p>
+<p><strong>Room:</strong> @Model.Building, @Model.RoomNumber</p>
+<p><strong>Time Slot:</strong> @Model.TimeSlot?.DayOfWeek @Model.TimeSlot?.StartTime - @Model.TimeSlot?.EndTime</p>
+<p><strong>Teacher:</strong> @Model.ClassAssignments.FirstOrDefault()?.Teacher?.FullName</p>
+
+<hr />

@@ -1,0 +1,9 @@
+﻿@* AddCourse.cshtml *@
+<h2>Add Course</h2>
+<form asp-action="AddCourse" method="post">
+    <input type="text" name="Title" placeholder="Course Title" class="form-control" required />
+    <input type="text" name="CourseCode" placeholder="Code" class="form-control" required />
+    <input type="number" name="Credits" placeholder="Credits" class="form-control" required />
+    <textarea name="Description" class="form-control" placeholder="Description"></textarea>
+    <button type="submit" class="btn btn-success">Add</button>
+</form>

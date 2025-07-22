@@ -1,0 +1,15 @@
+﻿
+@* AppealGrade.cshtml *@
+@model Project.Models.GradeAppeal
+<h2>Submit Grade Appeal</h2>
+<form asp-action="AppealGrade" method="post">
+    <input type="hidden" asp-for="ClassId" />
+    <div class="form-group">
+        <label asp-for="AppealText"></label>
+        <textarea asp-for="AppealText" class="form-control"></textarea>
+        <span asp-validation-for="AppealText" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-warning">Submit Appeal</button>
+</form>
+
+<hr />

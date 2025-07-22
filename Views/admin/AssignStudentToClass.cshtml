@@ -1,0 +1,17 @@
+﻿@* AssignStudentToClass.cshtml *@
+<h2>Assign Student to Class</h2>
+<form asp-action="AssignStudentToClass" method="post">
+    <select name="studentId" class="form-control">
+        @foreach (var s in ViewBag.Students)
+        {
+            <option value="@s.StudentId">@s.FirstName @s.LastName</option>
+        }
+    </select>
+    <select name="classId" class="form-control">
+        @foreach (var c in ViewBag.Classes)
+        {
+            <option value="@c.ClassId">@c.Course.Title (@c.Term @c.Year)</option>
+        }
+    </select>
+    <button type="submit" class="btn btn-primary">Assign</button>
+</form>

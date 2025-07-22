@@ -1,0 +1,26 @@
+﻿@* ViewMyCourses.cshtml *@
+@model List<ClassStudent>
+<h2>My Courses</h2>
+<table class="table">
+    <thead>
+        <tr><th>Course</th><th>Teacher</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var cs in Model)
+        {
+            <tr>
+                <td>@cs.Class.Course.Title</td>
+                <td>@cs.Class.ClassAssignments.FirstOrDefault()?.Teacher?.FullName</td>
+                <td>
+                    <a asp-action="ViewCourseDetails" asp-route-classId="@cs.ClassId" class="btn btn-primary btn-sm">Details</a>
+                    <form asp-action="UnregisterFromClass" method="post" class="d-inline">
+                        <input type="hidden" name="classId" value="@cs.ClassId" />
+                        <button type="submit" class="btn btn-danger btn-sm">Unregister</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />

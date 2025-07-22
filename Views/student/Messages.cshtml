@@ -1,0 +1,20 @@
+﻿@* Messages.cshtml *@
+@model List<Project.Models.Message>
+<h2>Messages</h2>
+<table class="table">
+    <thead>
+        <tr><th>From</th><th>Content</th><th>Sent At</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var msg in Model)
+        {
+            <tr>
+                <td>@msg.Sender?.FirstName @msg.Sender?.LastName</td>
+                <td>@msg.Content</td>
+                <td>@msg.SentAt.ToString("g")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
